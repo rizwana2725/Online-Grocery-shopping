@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instantcart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .navbar1 {
+            background-color: whitesmoke;
+            padding-bottom: 35%;
+        }
+
+        .nav-brand {
+            font-weight: bold;
+            font-size: 20%;
+        }
+
+        .search-bar {
+            border-radius: 12px;
+            border: 1px solid #ccc;
+            padding: 8px 10px;
+            width: 65%;
+        }
+
+        @media (max-width: 768px) {
+            .search-bar {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+        }
+
+
+        .category-item img {
+            width: 110px;
+            height: 100px;
+        }
+
+        .category-item {
+            text-align: center;
+            font-size: 20px;
+            padding-left: 2%;
+            padding-right: 2%;
+        }
+
+        .rounded-img {
+            border-radius: 12px;
+        }
+
+        .banner {
+            background: #68a85c;
+            border-radius: 30px;
+            padding: 20px;
+            margin-top: 10%;
+            margin-bottom: 10px;
+            color: #fff;
+            background-image: "";
+            background-size: cover;
+            background-position: center;
+        }
+
+        .banner-img {
+            height: 170px;
+            border: image width auto;
+            width: 37%;
+        }
+
+        .paan {
+            font-size: 40px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .paan1 {
+            font-size: 30px;
+        }
+
+        .sub-banner {
+      padding: 20px;
+      border-radius: 12px;
+      color: white;
+      height: 100%;
+    }
+
+    .banner-1 {
+      background-color: #00BCD4;
+    }
+
+    .banner-2 {
+      background-color: #FFC107;
+      color: #000;
+    }
+
+    .banner-3 {
+      background-color: #E3F2FD;
+      color: #000;
+    }
+
+    .sub-banner img {
+      max-height: 80px;
+      transition: max-height 0.3s ease;
+    }
+
+    .sub-banner h5 {
+      font-weight: bold;
+    }
+
+    .sub-banner p {
+      margin-bottom: 8px;
+    }
+    .sub-banner img {
+        max-height: 160px;
+        width:60%;
+      }
+
+    @media (max-width: 768px) {
+      .sub-banner {
+        text-align: center;
+        flex-direction: column;
+      }
+
+    }
+        .card img {
+            width: 80%;
+            height: 100px;
+            padding-inline-start: 40px;
+        }
+
+        .fruits {
+            padding-left: 10px;
+
+        }
+
+        .btn {
+            margin-left: 5rem;
+        }
+
+        .footer {
+            background-color: #f8f9fa;
+            padding: 60px 20px 20px;
+            font-size: 14px;
+        }
+
+        .footer h5 {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .footer a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer a:hover {
+            color: #28a745;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .app-icons img {
+            height: 40px;
+            margin: 5px;
+        }
+
+        .social-icons i {
+            font-size: 20px;
+            margin: 0 10px;
+            color: #333;
+        }
+
+        .social-icons i:hover {
+            color: #28a745;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top p-3">
+        <div class="container-fluid">
+            <a class="navbar-brand text-warning" href="#"><strong>Instant</strong><span
+                    class="text-success"><strong>Cart</strong></span></a>
+
+            <div class="d-none d-lg-block md-3">
+                <small><strong>Delivery in 9 minutes</strong><br>39/1-59/1, MG Rd, Opposite Kala...</small>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-3">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="categoryDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+                            <li><a class="dropdown-item" href="#">Fruits & Vegetables</a></li>
+                            <li><a class="dropdown-item" href="#">Snacks & Beverages</a></li>
+                            <li><a class="dropdown-item" href="#">Baby Care</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex flex-wrap align-items-center gap-2 ms-lg-3 mt-2 mt-lg-0  flex-grow-1">
+                    <input class="form-control  search-bar" type="search" placeholder='Search "sugar"'
+                        aria-label="Search">
+                    <a href="#" class="btn btn-outline-dark">Login</a>
+                    <a href="#" class="btn btn-outline-secondary">My Cart</a>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="row-cols-1">
+            <div class="banner text-dark d-flex align-items-center justify-content-between">
+                <div>
+                    <div class="text-white">
+                        <h2 class="paan"> Paan corner</h2>
+                        <p class="paan1"> Your favourite paan shop is now online</p>
+                    </div>
+                    <button class="btn btn-light text-success">Shop Now</button>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAeHlINC2UhzEX8t0laU19Ip95Ml1uMAa50A&s"
+                    class="banner-img" alt="Pharmacy Items">
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+    <div class="row g-3">
+      <div class="col-12 col-md-4">
+        <div class="sub-banner banner-1 d-flex justify-content-between align-items-center">
+          <div>
+            <h5>Pharmacy at your doorstep!</h5>
+            <p>Cough syrups, pain relief sprays & more</p>
+            <button class="btn btn-dark btn-sm">Order Now</button>
+          </div>
+          <img class="img-fluid" src="https://png.pngtree.com/png-vector/20200415/ourmid/pngtree-isometric-horizontal-pharmacy-with-people-holding-drug-packages-concept-3d-illustration-png-image_2184005.jpg">
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="sub-banner banner-2 d-flex justify-content-between align-items-center">
+          <div>
+            <h5>Pet Care supplies in minutes</h5>
+            <p>Food, treats, toys & more</p>
+            <button class="btn btn-dark btn-sm">Order Now</button>
+          </div>
+          <img class="img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiqKRyw-s465MBjqEr38O2SHa3RcMQj-iCuw&s" alt="Pet Care">
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="sub-banner banner-3 d-flex justify-content-between align-items-center">
+          <div>
+            <h5>No time for a beauty run?</h5>
+            <p>Get  Skincare essentials in minutes</p>
+            <button class="btn btn-dark btn-sm">Order Now</button>
+          </div>
+          <img class="img-fluid" src="https://www.nicepng.com/png/detail/394-3948210_skincare-product-skin-care-product-png.png" alt="Baby Care">
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="container py-4">
+        <div class="row text-center mb-4">
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="row g-3">
+                    <div class=" category-item">
+                        <img src="https://t4.ftcdn.net/jpg/01/67/17/97/360_F_167179728_Eou5mvDsorEy0SmCPngudVbzajtsBlaG.jpg"
+                            class="rounded-img" alt="Paan Corner" />
+                        <p>Paan Corner</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="row g-3">
+                    <div class=" category-item">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLLIDd5nS2YOJ4-uqj4XgFfW6e9Xnij2fhmqcSodmqAC9uwu6vJSBAgYjPz72-I4N1u4I&usqp=CAU"
+                            class="rounded-img" alt="Dairy" />
+                        <p>Dairy, Bread & Eggs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="row g-3">
+                    <div class="category-item">
+                        <img src="https://img.pikbest.com/origin/09/29/26/13npIkbEsT3Gs.png!w700wp" class="rounded-img"
+                            alt="Fruits" />
+                        <p>Fruits & Vegetables</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="row g-3">
+                    <div class="category-item">
+                        <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/app/assets/products/sliding_images/jpeg/d7692f91-03b7-41ac-b4ac-f7de54f04733.jpg?ts=1714119734"
+                            class="rounded-img" alt="Drinks" />
+                        <p>Cool Drinks & Juices</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="row g-3">
+                    <div class=" category-item">
+                        <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/app/assets/products/sliding_images/jpeg/94eaf0e4-f627-41a9-8421-6f0d072cf6b6.jpg?ts=1716900846"
+                            class="rounded-img" alt="Snacks" />
+                        <p>Snacks & Munchies</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="row g-3">
+                    <div class=" category-item">
+                        <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/da/cms-assets/cms/product/5a33f7f9-c840-439f-8c17-b7db18c2305f.jpg?ts=1731925622"
+                            class="rounded-img" alt="Breakfast" />
+                        <p>Breakfast & Instant Food</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="row g-3">
+                    <div class=" category-item">
+                        <img src="https://cococart.in/cdn/shop/files/1CH2562.png?v=1728466532" class="rounded-img"
+                            alt="Sweets" />
+                        <p>Sweet Tooth</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="row g-3">
+                    <div class="category-item">
+                        <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/da/cms-assets/cms/product/e805602c-35e3-4d02-8cb3-e0c2b541dabd.jpg?ts=1746605235"
+                            class="rounded-img" alt="Bakery" />
+                        <p>Bakery & Biscuits</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="row g-3">
+                    <div class=" category-item">
+                        <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/da/cms-assets/cms/product/36fc02f6-cf81-4a91-8aa4-fc528087da17.jpg?ts=1729160006"
+                            class="rounded-img" alt="Tea" />
+                        <p>Tea, Coffee & Health Drink</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="row g-3">
+                    <div class="category-item">
+                        <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/da/cms-assets/cms/product/774c047c-2e86-4a3a-97f1-7975ec9d83f9.jpg?ts=1737097729"
+                            class="rounded-img" alt="Atta" />
+                        <p>Atta, Rice & Dal</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="row g-3">
+                    <div class=" category-item">
+                        <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/da/cms-assets/cms/product/44ea24cf-a3e4-4c4e-adad-a94f0b401ae2.jpg?ts=1749471509"
+                            class="rounded-img" alt="Breakfast" />
+                        <p>Masala,Oil & more</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="row g-3">
+                    <div class=" category-item">
+                        <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=360/app/images/products/sliding_image/18669a.jpg?ts=1707480361"
+                            class="rounded-img" alt="Breakfast" />
+                        <p>Sauces&spreads</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <h3 class="fruits"><strong>fruits & Vegetables</strong></h3>
+        </div>
+        <div class=" row g-3">
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://www.freeiconspng.com/thumbs/potato-png/potato-png-32.png" class="card-img"
+                            alt="...">
+                        <div class="card-body">
+                            <small>⏳ 8 MINS</small>
+                            <h5 class="card-title">Potato</h5>
+                            <p class="card-text">500g</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹38</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVmtSddBh5HNiTxh-Lmo1Mp68q30UQxkXuLw&s"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <small>⏳ 9 MINS</small>
+                            <h5 class="card-title">Tomato</h5>
+                            <p class="card-text">500g</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹19</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbYTJxQO3mTbpT3waOj1uzfd6Hr5_Ljga-kA&s"
+                            class="card-img-top-center" alt="...">
+                        <div class="card-body">
+                            <small>⏳ 11 MINS</small>
+                            <h5 class="card-title">Mirchi</h5>
+                            <p class="card-text">500g</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹20</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://pngimg.com/d/mango_PNG9165.png" class="card-img-top-center" alt="...">
+                        <div class="card-body">
+                            <small>⏳ 8 MINS</small>
+                            <h5 class="card-title">Mango</h5>
+                            <p class="card-text">2 pieces(550-700g)</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹85</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://i.pinimg.com/736x/39/e3/8a/39e38a13253cb077924e1714b0f292e9.jpg"
+                            class="card-img-top-center" alt="...">
+                        <div class="card-body">
+                            <small>⏳ 14 MINS</small>
+                            <h5 class="card-title">Banana</h5>
+                            <p class="card-text">3 pieces</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹34</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://thumbs.dreamstime.com/b/fresh-red-apple-water-drops-isolated-transparent-background-juicy-dew-perfect-healthy-food-concepts-png-321467756.jpg"
+                            class="card-img-top-center" alt="...">
+                        <div class="card-body">
+                            <small>⏳ 9 MINS</small>
+                            <h5 class="card-title">Apple</h5>
+                            <p class="card-text">2 pieces (300-400g)</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹104</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <h3 class="Oil"><strong>Oil & Masala</strong></h3>
+        </div>
+        <div class="row g-3">
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://www.jiomart.com/images/product/original/490768936/freedom-refined-sunflower-oil-1-l-product-images-o490768936-p490768936-1-202207191400.jpg?im=Resize=(1000,1000)"
+                            class="card-img" alt="...">
+                        <div class="card-body">
+                            <small>⏳ 8 MINS</small>
+                            <h5 class="card-title">Sunflower oil</h5>
+                            <p class="card-text">1 ltr</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹155</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://image.aapkabazar.co/product/219/1698906939092.png?type=png" class="card-img"
+                            alt="...">
+                        <div class="card-body">
+                            <small>⏳ 12 MINS</small>
+                            <h5 class="card-title">Fourtune oil</h5>
+                            <p class="card-text">1 ltr</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹160</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1nj8FdTB2xKfY0WxgDEWNNEYC6U2yYJTlKg&s"
+                            class="card-img" alt="...">
+                        <div class="card-body">
+                            <small>⏳ 19 MINS</small>
+                            <h5 class="card-title"> Saffola oil</h5>
+                            <p class="card-text">5 ltr</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹766</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://aapkabazar.co/_next/image?url=https%3A%2F%2Fimage.aapkabazar.co%2Fproduct%2F5657%2F1698039231729.png&w=3840&q=75"
+                            class="card-img" alt="...">
+                        <div class="card-body">
+                            <small>⏳ 9 MINS</small>
+                            <h5 class="card-title"> Turmeric Powder</h5>
+                            <p class="card-text">100g</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹35</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://www.bbassets.com/media/uploads/p/xl/40123264_14-maggi-masala-ae-magic-seasoning-vegetable-masala.jpg"
+                            class="card-img" alt="...">
+                        <div class="card-body">
+                            <small>⏳ 19 MINS</small>
+                            <h5 class="card-title"> Maggie Masala</h5>
+                            <p class="card-text">72g</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹60</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2023/5/305857312/JY/WF/BM/16668892/81hdmjtba5l-sl1500-2-.jpg"
+                            class="card-img" alt="...">
+                        <div class="card-body">
+                            <small>⏳ 8 MINS</small>
+                            <h5 class="card-title">Chilli powder</h5>
+                            <p class="card-text">100g</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹40</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <h3 class="Diary"><strong>Diary Products</strong></h3>
+        </div>
+        <div class="row g-3">
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB3yVew9eMjh8gSDdFoPkhtG8aOhZUUP5zlA&s"
+                            class="card-img" alt="...">
+                        <div class="card-body">
+                            <small>⏳12 MINS</small>
+                            <h5 class="card-title">Heritage Milk</h5>
+                            <p class="card-text">500 ml</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹35</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://5.imimg.com/data5/RI/YT/MY-17977960/toned-milk-500x500.png" class="card-img"
+                            alt="...">
+                        <div class="card-body">
+                            <small>⏳ 11 MINS</small>
+                            <h5 class="card-title">Thirumala Milk</h5>
+                            <p class="card-text">500 ml</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹38</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://www.jiomart.com/images/product/original/490926252/heritage-curd-500-g-pouch-product-images-o490926252-p590142459-0-202203150928.jpg?im=Resize=(420,420)"
+                            class="card-img" alt="...">
+                        <div class="card-body">
+                            <small>⏳ 13 MINS</small>
+                            <h5 class="card-title">Heritage Curd</h5>
+                            <p class="card-text">500g</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹30</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://www.milma.com/storage/products//April2023//qEiwh4qbyuA1jjahbxQ3.png"
+                            class="card-img" alt="...">
+                        <div class="card-body">
+                            <small>⏳ 8 MINS</small>
+                            <h5 class="card-title">Milma Curd</h5>
+                            <p class="card-text">500g</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹35</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS8nfSNZDfoFRuzoCDP_pgQOmtEr02_zpDfg&s"
+                            class="card-img" alt="...">
+                        <div class="card-body">
+                            <small>⏳ 11 MINS</small>
+                            <h5 class="card-title">Durga Ghee</h5>
+                            <p class="card-text">100g</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹70</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYz_1QvhJdU0Q6aU-Sh_WrPA1BcqG2Mm4pEA&s"
+                            class="card-img" alt="...">
+                        <div class="card-body">
+                            <small>⏳ 9 MINS</small>
+                            <h5 class="card-title">GRB Ghee</h5>
+                            <p class="card-text">100g</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹90</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <h3 class="Snacks"><strong>Snacks & Drinks</strong></h3>
+        </div>
+        <div class="row g-3">
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://i.pinimg.com/736x/80/ad/7e/80ad7e55ec0a63b1a5f7e851816afb3e.jpg"
+                            class="card-img" alt="...">
+                        <div class="card-body">
+                            <small>⏳ 8 MINS</small>
+                            <h5 class="card-title">Kurkure</h5>
+                            <p class="card-text">75g</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹20</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://m.media-amazon.com/images/I/81b8CafVhPL.jpg" class="card-img" alt="...">
+                        <div class="card-body">
+                            <small>⏳ 16 MINS</small>
+                            <h5 class="card-title">Tedhe Medhe</h5>
+                            <p class="card-text">75g</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹20</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://dailygrowcer.com/wp-content/uploads/2022/03/bingo-potato-chips-original-style-chilli-sprinkled22g.jpg"
+                            class="card-img" alt="...">
+                        <div class="card-body">
+                            <small>⏳ 11 MINS</small>
+                            <h5 class="card-title">Bingo</h5>
+                            <p class="card-text">100</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹30</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyhH3P2iqQFx6K6OQt4BiCh7NqPenKkrZBzg&s"
+                            class="card-img" alt="...">
+                        <div class="card-body">
+                            <small>⏳ 13 MINS</small>
+                            <h5 class="card-title">Thumsup</h5>
+                            <p class="card-text">500 ml</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹45</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://frugivore-bucket.s3.amazonaws.com/media/package/img_one/2020-10-17/Sprite_Soft_Drink_1.25l.jpg"
+                            class="card-img" alt="...">
+                        <div class="card-body">
+                            <small>⏳ 8 MINS</small>
+                            <h5 class="card-title">Sprite</h5>
+                            <p class="card-text">1 ltr</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹60</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col mb-4">
+                    <div class="card h-40">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs4NMCcO6P69BlaVenfCjbtPlYD64GpLdFSw&s"
+                            class="card-img" alt="...">
+                        <div class="card-body">
+                            <small>⏳ 9 MINS</small>
+                            <h5 class="card-title">Limca</h5>
+                            <p class="card-text">500 ml</p>
+                            <div class="d-flex align-items-center justify-content-center price-add-group">
+                                <p class="card-price">₹40</p>
+                                <button class="btn btn-light text-success btn btn-outline-success">Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <h5>Useful Links</h5>
+                        <a href="#">Blog</a>
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">FAQs</a>
+                        <a href="#">Security</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Partner</a>
+                        <a href="#">Franchise</a>
+                        <a href="#">Seller</a>
+                        <a href="#">Warehouse</a>
+                        <a href="#">Deliver</a>
+                        <a href="#">Resources</a>
+                        <a href="#">Recipes</a>
+                        <a href="#">Bistro</a>
+                    </div>
+                    <div class="col-md-9">
+                        <h5>Categories <a href="#" class="text-success ml-2">see all</a></h5>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href="#">Vegetables & Fruits</a>
+                                <a href="#">Cold Drinks & Juices</a>
+                                <a href="#">Bakery & Biscuits</a>
+                                <a href="#">Dry Fruits, Masala & Oil</a>
+                                <a href="#">Paan Corner</a>
+                                <a href="#">Pharma & Wellness</a>
+                                <a href="#">Ice Creams & Frozen Desserts</a>
+                                <a href="#">Beauty & Cosmetics</a>
+                                <a href="#">Electronics & Electricals</a>
+                                <a href="#">Toys & Games</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#">Dairy & Breakfast</a>
+                                <a href="#">Instant & Frozen Food</a>
+                                <a href="#">Sweet Tooth</a>
+                                <a href="#">Sauces & Spreads</a>
+                                <a href="#">Organic & Premium</a>
+                                <a href="#">Cleaning Essentials</a>
+                                <a href="#">Personal Care</a>
+                                <a href="#">Magazines</a>
+                                <a href="#">Stationery Needs</a>
+                                <a href="#">Print Store</a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#">Munchies</a>
+                                <a href="#">Tea, Coffee & Health Drinks</a>
+                                <a href="#">Atta, Rice & Dal</a>
+                                <a href="#">Chicken, Meat & Fish</a>
+                                <a href="#">Baby Care</a>
+                                <a href="#">Home & Office</a>
+                                <a href="#">Pet Care</a>
+                                <a href="#">Fashion & Accessories</a>
+                                <a href="#">Books</a>
+                                <a href="#">E-Gift Cards</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom mt-5">
+                <div class="row">
+                    <div class="col-md-4 text-md-left text-center mb-3 mb-md-0">
+                    </div>
+                    <div class="col-md-4 text-center app-icons">
+                        <strong>Download App</strong><br>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzb7K02mWDA5QcK3avJwadF6TsLEYnZBtirqquEbZCFyRuPE1kNbrQkBKc8Bgf1T-42w&usqp=CAU"
+                            alt="App Store" />
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                            alt="Google Play" />
+                    </div>
+                    <div class="col-md-4 text-md-right text-center social-icons">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-linkedin-in"></i>
+                        <i class="fab fa-threads"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
